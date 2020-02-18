@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepositoryListViewController: BaseViewController<RepositoryListView> {
+class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     
     override func loadView() {
         super.loadView()

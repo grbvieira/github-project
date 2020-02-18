@@ -8,13 +8,13 @@
 
 import UIKit
 
-class RepositoryListCoordinator: Coordinator {
+class RepositoriesListCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigation: UINavigationController
     let controller: UIViewController
     init(with navigation: UINavigationController) {
         self.navigation = navigation
-        self.controller = RepositoryListViewController()
+        self.controller = RepositoriesListViewController()
     }
     
     func start(presentation: Presentation) {

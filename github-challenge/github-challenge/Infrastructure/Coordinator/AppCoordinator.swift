@@ -23,7 +23,7 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigation
         window.makeKeyAndVisible()
         
-        let main = RepositoryListCoordinator(with: self.navigation)
+        let main = RepositoriesListCoordinator(with: self.navigation)
         self.addChildCoordinator(main)
         return main.start(with: presentation)
     }
