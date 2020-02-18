@@ -35,7 +35,7 @@ class RepositoryViewDetail: NibView {
         return label
     }()
     
-    //MARK: - View Life
+    //MARK: - ViewCircleLife
     
     override func awakeFromNib() {
         super.awakeFromNib()
