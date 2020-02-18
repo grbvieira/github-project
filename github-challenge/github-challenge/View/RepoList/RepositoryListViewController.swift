@@ -8,10 +8,10 @@
 
 import UIKit
 
-class RepositoryListViewController: BaseViewController<RepositoryView> {
+class RepositoryListViewController: BaseViewController<RepositoryListView> {
     
     override func loadView() {
         super.loadView()
-       // customView.delegate = self
+       
     }
 }

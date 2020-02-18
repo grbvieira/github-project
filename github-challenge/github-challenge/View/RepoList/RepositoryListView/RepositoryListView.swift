@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepositoryView: UIView {
+class RepositoryListView: UIView {
     
     required init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
