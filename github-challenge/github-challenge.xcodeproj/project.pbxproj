@@ -128,13 +128,12 @@
 		75D4E00D23FB683E00C82C32 /* github-challenge */ = {
 			isa = PBXGroup;
 			children = (
-				75EC6E4B23FCBC1E00179A3B /* ViewModel */,
+				75D4E03A23FB6D4F00C82C32 /* Infrastructure */,
 				75EC6E4823FCBA9D00179A3B /* Manager */,
 				75EC6E4523FCB75E00179A3B /* Business */,
-				75EC6E4223FB852B00179A3B /* Provider */,
-				75D4E03A23FB6D4F00C82C32 /* Infrastructure */,
 				75FEE0AE23FB7D0800009D6D /* Model */,
 				75D4E03523FB6CB800C82C32 /* View */,
+				75EC6E4B23FCBC1E00179A3B /* ViewModel */,
 			);
 			path = "github-challenge";
 			sourceTree = "<group>";
@@ -187,6 +186,7 @@
 		75D4E03A23FB6D4F00C82C32 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				75EC6E4223FB852B00179A3B /* Provider */,
 				75FEE0A923FB7AA900009D6D /* Network */,
 				75FEE0A623FB734D00009D6D /* Extension */,
 				75D4E04423FB6F5900C82C32 /* Suporting Files */,
