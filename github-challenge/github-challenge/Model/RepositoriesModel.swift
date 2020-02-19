@@ -49,7 +49,7 @@ struct Item: Decodable {
     let issuesURL, pullsURL, milestonesURL, notificationsURL: String?
     let labelsURL, releasesURL: String?
     let deploymentsURL: String?
-    let createdAt, updatedAt, pushedAt: Date?
+    let createdAt, updatedAt, pushedAt: String?
     let gitURL, sshURL: String?
     let cloneURL: String?
     let svnURL: String?

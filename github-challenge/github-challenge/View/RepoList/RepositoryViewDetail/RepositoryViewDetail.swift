@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class RepositoryViewDetail: NibView {
+class RepositoryViewDetail: UIView {
     
     var stackDetail = UIStackView()
     var stackImage  = UIStackView()

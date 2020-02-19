@@ -129,8 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				75D4E03A23FB6D4F00C82C32 /* Infrastructure */,
-				75EC6E4823FCBA9D00179A3B /* Manager */,
 				75EC6E4523FCB75E00179A3B /* Business */,
+				75EC6E4823FCBA9D00179A3B /* Manager */,
 				75FEE0AE23FB7D0800009D6D /* Model */,
 				75D4E03523FB6CB800C82C32 /* View */,
 				75EC6E4B23FCBC1E00179A3B /* ViewModel */,
