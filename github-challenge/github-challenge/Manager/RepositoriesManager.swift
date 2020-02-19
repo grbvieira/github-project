@@ -8,7 +8,7 @@
 
 import Foundation
 protocol RepositoriesManagerDelegate {
-    func didFetch(_ data: RepositoriesModel)
+    func didFetch(_ data: [RepositoriesViewModel])
     func errorToFetch(_ error: String)
 }
 
@@ -29,36 +29,23 @@ class RepositoriesManager: NSObject {
 
 extension RepositoriesManager: RepositoriesBusinessDelegate {
     func didFetch(_ data: RepositoriesModel) {
-        
-    }
-    
-    func errorToFetch(_ error: String) {
-        
-    }
-    
-    
-}
-
-/*extension PropertiesManager: PropertiesBusinessDelegate{
-    func didFetch(_ data: Welcome) {
-        let propeties = wrapToViewModel(model: data)
-        self.delegate?.didFetch(propeties)
+        let repositories = wrapToViewModel(model: data)
+        self.delegate?.didFetch(repositories)
     }
     
     func errorToFetch(_ error: String) {
         self.delegate?.errorToFetch(error)
     }
     
-    func wrapToViewModel(model: Welcome) -> [PropertiesViewModel]{
-        var properties = [PropertiesViewModel]()
+    func wrapToViewModel(model: RepositoriesModel) -> [RepositoriesViewModel] {
+        var repositories = [RepositoriesViewModel]()
         
-        for item in model {
-            if valid(data: item){
-                let property = PropertiesViewModel(entry: item)
-                properties.append(property)
-            }
+        for item in model.items {
+            let viewModel = RepositoriesViewModel(entry: item)
+            repositories.append(viewModel)
         }
         
-        return properties
+        return repositories
     }
-*/
+    
+}
