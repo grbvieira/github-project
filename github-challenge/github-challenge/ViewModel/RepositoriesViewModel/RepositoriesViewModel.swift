@@ -22,12 +22,12 @@ class RepositoriesViewModel {
     }
     
     var nameAuthor: String {
-        let name = entry?.owner.login ?? String()
+        let name = entry?.owner?.login ?? String()
         return name
     }
     
     var photoURL: URL {
-        let path = entry?.owner.avatarURL
+        let path = entry?.owner?.avatarURL
         let photoURL = URL(string: path!)!
         return photoURL
     }

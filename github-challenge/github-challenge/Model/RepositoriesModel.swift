@@ -10,9 +10,9 @@ import Foundation
 
 // MARK: - Welcome
 struct RepositoriesModel: Decodable {
-    let totalCount: Int
-    let incompleteResults: Bool
-    let items: [Item]
+    let totalCount: Int?
+    let incompleteResults: Bool?
+    let items: [Item]?
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
@@ -23,49 +23,49 @@ struct RepositoriesModel: Decodable {
 
 // MARK: - Item
 struct Item: Decodable {
-    let id: Int
-    let nodeID, name, fullName: String
-    let itemPrivate: Bool
-    let owner: Owner
-    let htmlURL: String
-    let itemDescription: String
-    let fork: Bool
-    let url, forksURL: String
-    let keysURL, collaboratorsURL: String
-    let teamsURL, hooksURL: String
-    let issueEventsURL: String
-    let eventsURL: String
-    let assigneesURL, branchesURL: String
-    let tagsURL: String
-    let blobsURL, gitTagsURL, gitRefsURL, treesURL: String
-    let statusesURL: String
-    let languagesURL, stargazersURL, contributorsURL, subscribersURL: String
-    let subscriptionURL: String
-    let commitsURL, gitCommitsURL, commentsURL, issueCommentURL: String
-    let contentsURL, compareURL: String
-    let mergesURL: String
-    let archiveURL: String
-    let downloadsURL: String
-    let issuesURL, pullsURL, milestonesURL, notificationsURL: String
-    let labelsURL, releasesURL: String
-    let deploymentsURL: String
-    let createdAt, updatedAt, pushedAt: Date
-    let gitURL, sshURL: String
-    let cloneURL: String
-    let svnURL: String
+    let id: Int?
+    let nodeID, name, fullName: String?
+    let itemPrivate: Bool?
+    let owner: Owner?
+    let htmlURL: String?
+    let itemDescription: String?
+    let fork: Bool?
+    let url, forksURL: String?
+    let keysURL, collaboratorsURL: String?
+    let teamsURL, hooksURL: String?
+    let issueEventsURL: String?
+    let eventsURL: String?
+    let assigneesURL, branchesURL: String?
+    let tagsURL: String?
+    let blobsURL, gitTagsURL, gitRefsURL, treesURL: String?
+    let statusesURL: String?
+    let languagesURL, stargazersURL, contributorsURL, subscribersURL: String?
+    let subscriptionURL: String?
+    let commitsURL, gitCommitsURL, commentsURL, issueCommentURL: String?
+    let contentsURL, compareURL: String?
+    let mergesURL: String?
+    let archiveURL: String?
+    let downloadsURL: String?
+    let issuesURL, pullsURL, milestonesURL, notificationsURL: String?
+    let labelsURL, releasesURL: String?
+    let deploymentsURL: String?
+    let createdAt, updatedAt, pushedAt: Date?
+    let gitURL, sshURL: String?
+    let cloneURL: String?
+    let svnURL: String?
     let homepage: String?
-    let size, stargazersCount, watchersCount: Int
-    let language: Language
-    let hasIssues, hasProjects, hasDownloads, hasWiki: Bool
-    let hasPages: Bool
-    let forksCount: Int
+    let size, stargazersCount, watchersCount: Int?
+    let language: Language?
+    let hasIssues, hasProjects, hasDownloads, hasWiki: Bool?
+    let hasPages: Bool?
+    let forksCount: Int?
     let mirrorURL: JSONNull?
-    let archived, disabled: Bool
-    let openIssuesCount: Int
+    let archived, disabled: Bool?
+    let openIssuesCount: Int?
     let license: License?
-    let forks, openIssues, watchers: Int
-    let defaultBranch: DefaultBranch
-    let score: Int
+    let forks, openIssues, watchers: Int?
+    let defaultBranch: DefaultBranch?
+    let score: Int?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -153,11 +153,11 @@ enum Language: String, Decodable {
 
 // MARK: - License
 struct License: Decodable {
-    let key: Key
-    let name: Name
-    let spdxID: SpdxID
+    let key: Key?
+    let name: Name?
+    let spdxID: SpdxID?
     let url: String?
-    let nodeID: NodeID
+    let nodeID: NodeID?
 
     enum CodingKeys: String, CodingKey {
         case key, name
@@ -201,18 +201,18 @@ enum SpdxID: String, Decodable {
 
 // MARK: - Owner
 struct Owner: Decodable {
-    let login: String
-    let id: Int
-    let nodeID: String
-    let avatarURL: String
-    let gravatarID: String
-    let url, htmlURL, followersURL: String
-    let followingURL, gistsURL, starredURL: String
-    let subscriptionsURL, organizationsURL, reposURL: String
-    let eventsURL: String
-    let receivedEventsURL: String
-    let type: TypeEnum
-    let siteAdmin: Bool
+    let login: String?
+    let id: Int?
+    let nodeID: String?
+    let avatarURL: String?
+    let gravatarID: String?
+    let url, htmlURL, followersURL: String?
+    let followingURL, gistsURL, starredURL: String?
+    let subscriptionsURL, organizationsURL, reposURL: String?
+    let eventsURL: String?
+    let receivedEventsURL: String?
+    let type: TypeEnum?
+    let siteAdmin: Bool?
 
     enum CodingKeys: String, CodingKey {
         case login, id
@@ -265,34 +265,4 @@ class JSONNull: Decodable, Hashable {
         var container = encoder.singleValueContainer()
         try container.encodeNil()
     }
-}
-
-extension RepositoriesModel {
-    static func map(json: Any) -> RepositoriesModel? {
-           guard let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted),
-               let enterprise = try? JSONDecoder().decode(RepositoriesModel.self, from: data) else {
-                   return nil
-           }
-           
-           return enterprise
-       }
-       
-       static func map(data: Data) -> RepositoriesModel? {
-           guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary,
-               let enterpriseJson = jsonObj.value(forKey: "repositories") as? NSArray else {
-                   return nil
-           }
-           
-           return map(json: enterpriseJson)
-       }
-       
-       static func mapArray(data: Data) -> [RepositoriesModel]? {
-           guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary,
-               let enterprisesJson = jsonObj.value(forKey: "repositories") as? NSArray else {
-                   return nil
-           }
-           
-           return enterprisesJson
-               .compactMap { RepositoriesModel.map(json: $0) }
-       }
 }

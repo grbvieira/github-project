@@ -40,6 +40,7 @@ extension APITarget: TargetType {
         switch self {
         case .repositories:
             var parameters: [String: Any] = [:]
+            parameters[Keys.query.rawValue] = Values.language.rawValue
             parameters[Keys.sort.rawValue] =  Values.sort.hashValue
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }

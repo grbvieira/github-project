@@ -23,6 +23,7 @@ enum Keys: String {
 
 enum Values: String {
     case sort = "stars"
+    case language = "language:swift"
 }
 
 extension TargetType {

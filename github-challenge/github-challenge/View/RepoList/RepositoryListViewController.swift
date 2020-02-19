@@ -10,6 +10,7 @@ import UIKit
 
 class RepositoriesListViewController: BaseViewController<RepositoryListView> {
      
+    private lazy var manager = RepositoriesManager(delegate: self)
     
     override func loadView() {
         super.loadView()
@@ -17,30 +18,22 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager.getRepositories()
     }
     
     func reloadView(with data: [RepositoriesViewModel]) {
-        self.clearStack()
-        
-        for repo in data {
-            
-        }
-    }
-    
-    func clearStack() {
-        customView.mainStack.subviews.forEach({
-            $0.removeFromSuperview()
-        })
+        self.customView.cleanMainStak()
     }
 }
 
 extension RepositoriesListViewController: RepositoriesManagerDelegate {
     func didFetch(_ data: [RepositoriesViewModel]) {
         self.reloadView(with: data)
+        self.customView.repositoriesList = data
     }
     
     func errorToFetch(_ error: String) {
-        self.clearStack()
+        self.customView.cleanMainStak()
         let alert = UIAlertController(title: "Alert", message: "Error: \(error)",         preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
        self.present(alert, animated: true, completion: nil)

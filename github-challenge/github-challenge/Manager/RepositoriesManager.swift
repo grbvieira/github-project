@@ -22,7 +22,7 @@ class RepositoriesManager: NSObject {
         self.delegate = delegate
     }
     
-    func getProperties(){
+    func getRepositories(){
         self.business.requestRepositories()
     }
 }
@@ -39,8 +39,12 @@ extension RepositoriesManager: RepositoriesBusinessDelegate {
     
     func wrapToViewModel(model: RepositoriesModel) -> [RepositoriesViewModel] {
         var repositories = [RepositoriesViewModel]()
+        guard let items = model.items else {
+            self.delegate?.errorToFetch("Items is empty")
+            return repositories
+        }
         
-        for item in model.items {
+        for item in items {
             let viewModel = RepositoriesViewModel(entry: item)
             repositories.append(viewModel)
         }

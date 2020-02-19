@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepositoryViewDetail: NibView {
     
@@ -42,8 +43,11 @@ class RepositoryViewDetail: NibView {
         self.setupStack()
     }
     
-    required init() {
+    required init(with data: RepositoriesViewModel) {
         super.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        self.autorName.text = data.nameAuthor
+        self.repoName.text = data.nameRepositories
+        self.photo.kf.setImage(with: data.photoURL)
     }
     
     required init?(coder aDecoder: NSCoder) {
