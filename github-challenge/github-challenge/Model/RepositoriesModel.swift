@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct RepositoriesModel: Decodable {
     let totalCount: Int
     let incompleteResults: Bool
     let items: [Item]
@@ -22,7 +22,7 @@ struct Welcome: Codable {
 }
 
 // MARK: - Item
-struct Item: Codable {
+struct Item: Decodable {
     let id: Int
     let nodeID, name, fullName: String
     let itemPrivate: Bool
@@ -141,18 +141,18 @@ struct Item: Codable {
     }
 }
 
-enum DefaultBranch: String, Codable {
+enum DefaultBranch: String, Decodable {
     case develop = "develop"
     case development = "development"
     case master = "master"
 }
 
-enum Language: String, Codable {
+enum Language: String, Decodable {
     case swift = "Swift"
 }
 
 // MARK: - License
-struct License: Codable {
+struct License: Decodable {
     let key: Key
     let name: Name
     let spdxID: SpdxID
@@ -167,7 +167,7 @@ struct License: Codable {
     }
 }
 
-enum Key: String, Codable {
+enum Key: String, Decodable {
     case apache20 = "apache-2.0"
     case cc010 = "cc0-1.0"
     case gpl30 = "gpl-3.0"
@@ -175,7 +175,7 @@ enum Key: String, Codable {
     case other = "other"
 }
 
-enum Name: String, Codable {
+enum Name: String, Decodable {
     case apacheLicense20 = "Apache License 2.0"
     case creativeCommonsZeroV10Universal = "Creative Commons Zero v1.0 Universal"
     case gnuGeneralPublicLicenseV30 = "GNU General Public License v3.0"
@@ -183,7 +183,7 @@ enum Name: String, Codable {
     case other = "Other"
 }
 
-enum NodeID: String, Codable {
+enum NodeID: String, Decodable {
     case mDc6TGljZW5ZZTA = "MDc6TGljZW5zZTA="
     case mDc6TGljZW5ZZTEz = "MDc6TGljZW5zZTEz"
     case mDc6TGljZW5ZZTI = "MDc6TGljZW5zZTI="
@@ -191,7 +191,7 @@ enum NodeID: String, Codable {
     case mDc6TGljZW5ZZTk = "MDc6TGljZW5zZTk="
 }
 
-enum SpdxID: String, Codable {
+enum SpdxID: String, Decodable {
     case apache20 = "Apache-2.0"
     case cc010 = "CC0-1.0"
     case gpl30 = "GPL-3.0"
@@ -200,7 +200,7 @@ enum SpdxID: String, Codable {
 }
 
 // MARK: - Owner
-struct Owner: Codable {
+struct Owner: Decodable {
     let login: String
     let id: Int
     let nodeID: String
@@ -235,14 +235,14 @@ struct Owner: Codable {
     }
 }
 
-enum TypeEnum: String, Codable {
+enum TypeEnum: String, Decodable {
     case organization = "Organization"
     case user = "User"
 }
 
 // MARK: - Encode/decode helpers
 
-class JSONNull: Codable, Hashable {
+class JSONNull: Decodable, Hashable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
@@ -267,3 +267,32 @@ class JSONNull: Codable, Hashable {
     }
 }
 
+extension RepositoriesModel {
+    static func map(json: Any) -> RepositoriesModel? {
+           guard let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted),
+               let enterprise = try? JSONDecoder().decode(RepositoriesModel.self, from: data) else {
+                   return nil
+           }
+           
+           return enterprise
+       }
+       
+       static func map(data: Data) -> RepositoriesModel? {
+           guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary,
+               let enterpriseJson = jsonObj.value(forKey: "repositories") as? NSArray else {
+                   return nil
+           }
+           
+           return map(json: enterpriseJson)
+       }
+       
+       static func mapArray(data: Data) -> [RepositoriesModel]? {
+           guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary,
+               let enterprisesJson = jsonObj.value(forKey: "repositories") as? NSArray else {
+                   return nil
+           }
+           
+           return enterprisesJson
+               .compactMap { RepositoriesModel.map(json: $0) }
+       }
+}

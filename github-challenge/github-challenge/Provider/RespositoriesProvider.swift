@@ -7,15 +7,22 @@
 //
 
 import Moya
-
-enum Response {
+import RxSwift
+enum Result<T> {
     case sucess(T)
-    case failure
+    case failure(Error)
 }
 
 protocol APIProtocol {
-    func resquestRepositories()
+    func resquestRepositories() -> Single<RepositoriesModel>
 }
-class RepositoriesProvider {
+class RepositoriesProvider: APIProtocol {
+    
+    func resquestRepositories() -> Single<RepositoriesModel> {
+        return provider.rx
+            .request(.repositories)
+            .map { RepositoriesModel.map(data: $0.data)! }
+        
+    }
     
 }

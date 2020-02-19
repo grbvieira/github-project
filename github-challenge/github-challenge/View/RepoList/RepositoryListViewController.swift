@@ -10,8 +10,13 @@ import UIKit
 
 class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     
+    private let api = RepositoriesProvider()
+    
     override func loadView() {
         super.loadView()
-       
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }
