@@ -38,4 +38,20 @@ class RepositoriesBusiness {
             
         }.disposed(by: disposeBag)
     }
+    
+    
+   func getMock(){
+       if let path = Bundle.main.path(forResource: "repoMock", ofType: "json") {
+           do {
+                let fileUrl = URL(fileURLWithPath: path)
+                           // Getting data from JSON file using the file URL
+               let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
+               let response = try  JSONDecoder().decode(RepositoriesModel.self, from: data)
+            self.delegate?.didFetch(response )
+           } catch {
+              self.delegate?.errorToFetch("Não foi possivel ler o json")
+              // fatalError("Não foi possivel ler o json")
+           }
+       }
+   }
 }

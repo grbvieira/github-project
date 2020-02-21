@@ -19,6 +19,7 @@
 		75D4E03E23FB6DBF00C82C32 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E03D23FB6DBF00C82C32 /* Coordinator.swift */; };
 		75D4E04023FB6DEF00C82C32 /* RepositoryListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E03F23FB6DEF00C82C32 /* RepositoryListCoordinator.swift */; };
 		75D4E04323FB6E8500C82C32 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E04223FB6E8500C82C32 /* RepositoryListView.swift */; };
+		75D576D723FF5F8F0077B151 /* repoMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D576D623FF5F8E0077B151 /* repoMock.json */; };
 		75EC6E4423FB854B00179A3B /* RespositoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC6E4323FB854B00179A3B /* RespositoriesProvider.swift */; };
 		75EC6E4723FCB78400179A3B /* RepositoriesBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC6E4623FCB78400179A3B /* RepositoriesBusiness.swift */; };
 		75EC6E4A23FCBAC600179A3B /* RepositoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC6E4923FCBAC600179A3B /* RepositoriesManager.swift */; };
@@ -59,6 +60,7 @@
 		75D4E03D23FB6DBF00C82C32 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		75D4E03F23FB6DEF00C82C32 /* RepositoryListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListCoordinator.swift; sourceTree = "<group>"; };
 		75D4E04223FB6E8500C82C32 /* RepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
+		75D576D623FF5F8E0077B151 /* repoMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repoMock.json; sourceTree = "<group>"; };
 		75EC6E4323FB854B00179A3B /* RespositoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespositoriesProvider.swift; sourceTree = "<group>"; };
 		75EC6E4623FCB78400179A3B /* RepositoriesBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesBusiness.swift; sourceTree = "<group>"; };
 		75EC6E4923FCBAC600179A3B /* RepositoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesManager.swift; sourceTree = "<group>"; };
@@ -103,6 +105,13 @@
 				B3371DC195B526FBE2606573 /* Pods_github_challengeTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		757B540123FF5CEE002240F1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		75D4E00223FB683E00C82C32 = {
@@ -150,6 +159,7 @@
 		75D4E03023FB6B6600C82C32 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				75D4E03923FB6D4500C82C32 /* Coordinator */,
 				75D4E03123FB6BF300C82C32 /* BaseViewController.swift */,
 			);
 			path = Core;
@@ -186,12 +196,12 @@
 		75D4E03A23FB6D4F00C82C32 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				757B540123FF5CEE002240F1 /* Mock */,
 				75EC6E4223FB852B00179A3B /* Provider */,
 				75FEE0A923FB7AA900009D6D /* Network */,
 				75FEE0A623FB734D00009D6D /* Extension */,
 				75D4E04423FB6F5900C82C32 /* Suporting Files */,
 				75D4E03023FB6B6600C82C32 /* Core */,
-				75D4E03923FB6D4500C82C32 /* Coordinator */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -236,6 +246,7 @@
 		75EC6E4823FCBA9D00179A3B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				75D576D623FF5F8E0077B151 /* repoMock.json */,
 				75EC6E4923FCBAC600179A3B /* RepositoriesManager.swift */,
 			);
 			path = Manager;
@@ -387,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D4E01B23FB683F00C82C32 /* LaunchScreen.storyboard in Resources */,
+				75D576D723FF5F8F0077B151 /* repoMock.json in Resources */,
 				75D4E01823FB683F00C82C32 /* Assets.xcassets in Resources */,
 				75D4E01623FB683E00C82C32 /* Main.storyboard in Resources */,
 			);

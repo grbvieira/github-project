@@ -10,11 +10,11 @@ import UIKit
 
 class RepositoryListView: UIView {
     
-    var repositoriesList: [RepositoriesViewModel] = []{
-        didSet {
-            fillRepositories()
-        }
-    }
+    //    var repositoriesList: [RepositoriesViewModel] = []{
+    //        didSet {
+    //            fillRepositories()
+    //        }
+    //    }
     var mainStack = UIStackView()
     
     required init() {
@@ -34,8 +34,10 @@ class RepositoryListView: UIView {
     func setupStack() {
         mainStack.alignment = .fill
         mainStack.axis = .vertical
-        mainStack.distribution = .fill
-        mainStack.spacing = 4.0
+        mainStack.distribution = .fillEqually
+        mainStack.spacing = 2.0
+        mainStack.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        self.addSubview(mainStack)
     }
     
     func cleanMainStak() {
@@ -44,10 +46,13 @@ class RepositoryListView: UIView {
         })
     }
     
-    func fillRepositories() {
-        for item in repositoriesList {
-            mainStack.addArrangedSubview(RepositoryViewDetail(with: item))
+    func fillRepositories(with data: [RepositoriesViewModel]) {
+        
+        for item in data.enumerated() {
+            if item.offset <= 3 {
+                mainStack.addArrangedSubview(RepositoryViewDetail(with: item.element))
+                
+            }
         }
     }
-    
 }

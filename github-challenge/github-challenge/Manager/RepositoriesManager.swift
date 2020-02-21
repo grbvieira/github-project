@@ -23,7 +23,8 @@ class RepositoriesManager: NSObject {
     }
     
     func getRepositories(){
-        self.business.requestRepositories()
+        // self.business.requestRepositories()
+        self.business.getMock()
     }
 }
 

@@ -17,20 +17,19 @@ class RepositoryViewDetail: UIView {
     
     //MARK: - Cria Items para exibição
     private lazy var photo: UIImageView = {
-        let image = UIImageView()
-        image.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         return image
     }()
     
     private lazy var repoName: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
         return label
     }()
     
     private lazy var autorName: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         return label
@@ -40,12 +39,12 @@ class RepositoryViewDetail: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setupStack()
     }
     
     required init(with data: RepositoriesViewModel) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        self.autorName.text = data.nameAuthor
+        super.init(frame: CGRect(x: 0, y: 0, width:10, height: 10))
+        self.setupStack()
+        self.autorName.text = "Author: " + data.nameAuthor
         self.repoName.text = data.nameRepositories
         self.photo.kf.setImage(with: data.photoURL)
     }
@@ -54,37 +53,39 @@ class RepositoryViewDetail: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func setupStack() {
-        self.setupStackDetail()
         self.setupSackImage()
         self.setupStackInfo()
-        
-        //MARK: - Configura items na stack
-        stackImage.addArrangedSubview(photo)
-        stackInfo.addArrangedSubview(repoName)
-        stackInfo.addArrangedSubview(autorName)
-        
+        self.setupStackDetail()
     }
     
     func setupStackDetail() {
         stackDetail.axis = .horizontal
-        stackDetail.alignment = .fill
-        stackDetail.distribution = .fill
-        stackDetail.spacing = 2.0
+        stackDetail.alignment = .firstBaseline
+        stackDetail.distribution = .fillEqually
+        stackDetail.spacing = 0
+        stackDetail.addArrangedSubview(stackImage)
+        stackDetail.addArrangedSubview(stackInfo)
+        stackDetail.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100)
+        self.addSubview(stackDetail)
     }
     
     func setupSackImage() {
-        stackImage.axis = .vertical
+        stackImage.axis = .horizontal
         stackImage.alignment = .fill
         stackImage.distribution = .fill
-        stackImage.spacing = 2.0
+        stackImage.spacing = 0
+        photo.contentMode = .scaleAspectFit
+        self.stackImage.addArrangedSubview(photo)
     }
     
     func setupStackInfo() {
         stackInfo.axis = .vertical
-        stackInfo.alignment = .fill
+        stackInfo.alignment = .top
         stackInfo.distribution = .fill
         stackInfo.spacing = 2.0
+        
+        stackInfo.addArrangedSubview(repoName)
+        stackInfo.addArrangedSubview(autorName)
     }
 }
