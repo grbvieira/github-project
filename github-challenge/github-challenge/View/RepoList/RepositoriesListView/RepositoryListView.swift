@@ -35,25 +35,19 @@ class RepositoryListView: UIView {
         mainStack.spacing = 2.0
         
         self.scrollView.addSubview(mainStack)
-       // mainStack.bounds = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: 800)
 
         mainStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-          // Attaching the content's edges to the scroll view's edges
           mainStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
           mainStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
           mainStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
           mainStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-
-          // Satisfying size constraints
           mainStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         
     }
     
     func createScroll() {
-        // Scroll view, vertical
-      //  let scrollView = UIScrollView()
         self.addSubview(scrollView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +72,6 @@ class RepositoryListView: UIView {
             if item.offset <= 10 {
                 let cell = RepositoryViewDetail(with: item.element)
                 cell.translatesAutoresizingMaskIntoConstraints = false
-                // Doesn't have intrinsic content size, so we have to provide the height at least
                 cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
                 mainStack.addArrangedSubview(cell)
             }
