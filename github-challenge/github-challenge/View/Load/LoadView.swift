@@ -1,16 +1,14 @@
 //
-//  RepositoryViewDetail.swift
+//  LoadView.swift
 //  github-challenge
 //
-//  Created by Gerson Vieira on 17/02/20.
+//  Created by Gerson Vieira on 25/02/20.
 //  Copyright © 2020 Gerson Vieira. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
-import Cosmos
 
-class RepositoryViewDetail: UIView {
+class LoadView: UIView {
     
     var stackDetail = UIStackView()
     var stackImage  = UIStackView()
@@ -18,33 +16,27 @@ class RepositoryViewDetail: UIView {
     
     //MARK: - Cria Items para exibição
     private lazy var photo: UIImageView = {
-        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 90, height: 80))
+        image.image = UIImage(named: "gradiente")
         return image
     }()
     
-    private lazy var repoName: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.numberOfLines = 0
-        return label
+    private lazy var repoName: UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 90, height: 20))
+        image.image = UIImage(named: "gradiente")
+        return image
     }()
     
-    private lazy var autorName: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        return label
+    private lazy var autorName: UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 10))
+        image.image = UIImage(named: "gradiente")
+        return image
     }()
     
-    private lazy var starsCount: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private lazy var stars: CosmosView = {
-        return CosmosView()
+    private lazy var starsCount: UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 10))
+        image.image = UIImage(named: "gradiente")
+        return image
     }()
     
     //MARK: - ViewCircleLife
@@ -53,14 +45,13 @@ class RepositoryViewDetail: UIView {
         super.awakeFromNib()
     }
     
-    required init(with data: RepositoriesViewModel) {
+    required init() {
         super.init(frame: CGRect(x: 0, y: 0, width:10, height: 10))
         self.setupStack()
-        self.autorName.text = "Author: " + data.nameAuthor
-        self.repoName.text = data.nameRepositories
-        self.stars.rating = Double(data.starsCount)/2
-        self.starsCount.text = "Stars: " + data.starsCountToString
-        self.photo.kf.setImage(with: data.photoURL)
+        self.autorName.startShimmering()
+        self.repoName.startShimmering()
+        self.starsCount.startShimmering()
+        self.photo.startShimmering()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -95,22 +86,13 @@ class RepositoryViewDetail: UIView {
     
     func setupStackInfo() {
         stackInfo.axis = .vertical
-        stackInfo.alignment = .top
+        stackInfo.alignment = .fill
         stackInfo.distribution = .fill
         stackInfo.spacing = 2.0
         
+        stackInfo.addSubview(repoName)
+        stackInfo.addSubview(autorName)
         stackInfo.addArrangedSubview(repoName)
         stackInfo.addArrangedSubview(autorName)
-        stackInfo.addArrangedSubview(starsCount)
-      /*  let stackStars = UIStackView()
-        stackStars.axis = .horizontal
-        stackStars.alignment = .top
-        stackStars.distribution = .fill
-        
-        stars.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-        stackStars.addArrangedSubview(stars)
-        stackStars.addArrangedSubview(starsCount)
-        
-        stackInfo.addArrangedSubview(stackStars)*/
     }
 }

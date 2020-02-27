@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		757000862405F06B003353A1 /* Shimmer+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000852405F06B003353A1 /* Shimmer+UIView.swift */; };
+		757000892405F0BC003353A1 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000882405F0BC003353A1 /* LoadView.swift */; };
 		75D4E00F23FB683E00C82C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E00E23FB683E00C82C32 /* AppDelegate.swift */; };
 		75D4E01323FB683E00C82C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E01223FB683E00C82C32 /* ViewController.swift */; };
 		75D4E01623FB683E00C82C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D4E01423FB683E00C82C32 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		757000852405F06B003353A1 /* Shimmer+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shimmer+UIView.swift"; sourceTree = "<group>"; };
+		757000882405F0BC003353A1 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
 		75D4E00B23FB683E00C82C32 /* github-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D4E00E23FB683E00C82C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D4E01223FB683E00C82C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		757000872405F0A4003353A1 /* Load */ = {
+			isa = PBXGroup;
+			children = (
+				757000882405F0BC003353A1 /* LoadView.swift */,
+			);
+			path = Load;
+			sourceTree = "<group>";
+		};
 		757B540123FF5CEE002240F1 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +180,7 @@
 		75D4E03523FB6CB800C82C32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				757000872405F0A4003353A1 /* Load */,
 				75D4E03623FB6CBF00C82C32 /* RepoList */,
 			);
 			path = View;
@@ -280,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				75FEE0A723FB735E00009D6D /* NibView+UIView.swift */,
+				757000852405F06B003353A1 /* Shimmer+UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -513,8 +527,10 @@
 				75EC6E4423FB854B00179A3B /* RespositoriesProvider.swift in Sources */,
 				75D4E03823FB6CFA00C82C32 /* RepositoryListViewController.swift in Sources */,
 				75FEE0AB23FB7ADA00009D6D /* TargetType.swift in Sources */,
+				757000892405F0BC003353A1 /* LoadView.swift in Sources */,
 				75FEE0B023FB7D2A00009D6D /* RepositoriesModel.swift in Sources */,
 				75FEE0AD23FB7B2A00009D6D /* ApiTarge.swift in Sources */,
+				757000862405F06B003353A1 /* Shimmer+UIView.swift in Sources */,
 				75D4E03E23FB6DBF00C82C32 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

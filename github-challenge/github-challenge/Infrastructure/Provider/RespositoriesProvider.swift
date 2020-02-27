@@ -8,10 +8,6 @@
 
 import Moya
 import RxSwift
-//enum Result<T> {
-//    case sucess(T)
-//    case failure(Error)
-//}
 
 protocol APIProtocol {
     func resquestRepositories() -> Single<RepositoriesModel>
@@ -24,8 +20,7 @@ class RepositoriesProvider: APIProtocol {
             .map {
                 let response = try JSONDecoder().decode(RepositoriesModel.self, from: $0.data)
                 return response
-                }
-        
+        }
     }
 }
 extension Data

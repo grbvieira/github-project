@@ -16,7 +16,7 @@ class RepositoryListView: UIView {
     required init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         setupUI()
-        //  setupStack()
+        setupStack()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,21 +35,20 @@ class RepositoryListView: UIView {
         mainStack.spacing = 2.0
         
         self.scrollView.addSubview(mainStack)
-
+        
         mainStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-          mainStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-          mainStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-          mainStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
-          mainStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-          mainStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            mainStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            mainStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            mainStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            mainStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            mainStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         
     }
     
     func createScroll() {
         self.addSubview(scrollView)
-        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -66,15 +65,25 @@ class RepositoryListView: UIView {
     }
     
     func fillRepositories(with data: [RepositoriesViewModel]) {
-        setupStack()
+        self.cleanMainStak()
+        //   setupStack()
         
         for item in data.enumerated() {
-            if item.offset <= 10 {
-                let cell = RepositoryViewDetail(with: item.element)
-                cell.translatesAutoresizingMaskIntoConstraints = false
-                cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
-                mainStack.addArrangedSubview(cell)
-            }
+            //            if item.offset <= 10 {
+            let cell = RepositoryViewDetail(with: item.element)
+            cell.translatesAutoresizingMaskIntoConstraints = false
+            cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            mainStack.addArrangedSubview(cell)
+            //   }
         }
+    }
+    
+    func loadingView() {
+       // self.cleanMainStak()
+        setupStack()
+        let loadView = LoadView()
+        loadView.translatesAutoresizingMaskIntoConstraints = false
+        loadView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        mainStack.addArrangedSubview(loadView)
     }
 }

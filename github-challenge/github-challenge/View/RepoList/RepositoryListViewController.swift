@@ -7,10 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
+enum Request<T> {
+    case none
+    case loading
+    case success(T)
+    case failure(String)
+}
 
 class RepositoriesListViewController: BaseViewController<RepositoryListView> {
-     
-    private lazy var manager = RepositoriesManager(delegate: self)
+    
+    private var disposeBag: DisposeBag!
+    private let fetch = RepositoriesProvider()
+    private var repositoriesResponse: Request<[RepositoriesModel]> = .none {
+        didSet { reloadStack() }
+    }
     
     override func loadView() {
         super.loadView()
@@ -18,27 +31,46 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.getRepositories()
+        self.fetchRepositories()
     }
     
-    func reloadView(with data: [RepositoriesViewModel]) {
-     //   self.customView.cleanMainStak()
-    }
-}
+    func fetchRepositories() {
+        disposeBag = DisposeBag()
+        
+        fetch.resquestRepositories().subscribe() {
+            [weak self] (event) in
+            guard let self = self else { return }
+            
+            switch event {
+            case .success(let response):
 
-extension RepositoriesListViewController: RepositoriesManagerDelegate {
-    func didFetch(_ data: [RepositoriesViewModel]) {
-     //   self.customView.cleanMainStak()
-//        self.customView.repositoriesList = data
-        self.customView.fillRepositories(with: data)
+                self.repositoriesResponse = .success([response])
+            case .error(let error):
+                self.repositoriesResponse = .failure(error.localizedDescription)
+            }
+        }.disposed(by: disposeBag)
     }
     
-    func errorToFetch(_ error: String) {
-        self.customView.cleanMainStak()
-        let alert = UIAlertController(title: "Alert", message: "Error: \(error)",  preferredStyle: UIAlertController.Style.alert)
+    func reloadStack() {
+        customView.cleanMainStak()
+        
+        switch  repositoriesResponse {
+        case .loading :
+            self.customView.loadingView()
+            return
+        case .success(let response):
+            let viewModel = FillViewModel().wrapToViewModel(model: response[0])
+            customView.fillRepositories(with: viewModel)
+        case .failure(let error):
+            self.alert(message: error)
+        case .none:
+            return
+        }
+    }
+    
+    func alert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: "Error: \(message)",  preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
-       self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
-    
-    
 }
