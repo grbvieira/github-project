@@ -10,7 +10,6 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    
     var navigation: UINavigationController
     let window: UIWindow
     
@@ -22,10 +21,8 @@ class AppCoordinator: Coordinator {
     func start(with presentation: Presentation) -> UIViewController {
         window.rootViewController = navigation
         window.makeKeyAndVisible()
-        
         let main = RepositoriesListCoordinator(with: self.navigation)
         self.addChildCoordinator(main)
         return main.start(with: presentation)
     }
 }
-

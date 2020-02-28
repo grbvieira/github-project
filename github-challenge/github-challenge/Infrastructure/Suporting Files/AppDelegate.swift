@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         let appCoordinator = AppCoordinator(with: window!)
         let _ = appCoordinator.start(with: .push(animated: true))
-        
         return true
     }
 }

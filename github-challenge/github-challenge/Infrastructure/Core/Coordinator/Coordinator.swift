@@ -16,7 +16,6 @@ enum Presentation {
 protocol Coordinator: class {
     var childCoordinators: [Coordinator] { get set }
     var navigation: UINavigationController { get }
-    
     func start(with presentation: Presentation) -> UIViewController
     func addChildCoordinator(_ coordinator: Coordinator)
     func removeChildCoordinator(_ coordinator: Coordinator)
@@ -36,7 +35,6 @@ extension Coordinator {
     
     func removeChildCoordinator(_ coordinator: Coordinator) {
         guard !childCoordinators.isEmpty else { return }
-        
         for (index, element) in childCoordinators.enumerated() {
             if element === coordinator {
                 childCoordinators.remove(at: index)

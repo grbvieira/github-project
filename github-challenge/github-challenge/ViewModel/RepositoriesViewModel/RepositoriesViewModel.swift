@@ -9,7 +9,6 @@
 import Foundation
 
 class RepositoriesViewModel {
-    
     private var entry: Item?
     
     init(entry: Item) {
@@ -45,19 +44,15 @@ class RepositoriesViewModel {
 }
 
 class FillViewModel {
-    
      func wrapToViewModel(model: RepositoriesModel) -> [RepositoriesViewModel] {
            var repositories = [RepositoriesViewModel]()
            guard let items = model.items else {
                return repositories
            }
-           
            for item in items {
                let viewModel = RepositoriesViewModel(entry: item)
                repositories.append(viewModel)
            }
-           
            return repositories
        }
-    
 }

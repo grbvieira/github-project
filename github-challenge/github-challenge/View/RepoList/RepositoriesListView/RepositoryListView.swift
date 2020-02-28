@@ -9,7 +9,6 @@
 import UIKit
 
 class RepositoryListView: UIView {
-    
     var mainStack = UIStackView()
     let scrollView = UIScrollView()
     
@@ -33,9 +32,7 @@ class RepositoryListView: UIView {
         mainStack.axis = .vertical
         mainStack.distribution = .fillEqually
         mainStack.spacing = 2.0
-        
         self.scrollView.addSubview(mainStack)
-        
         mainStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mainStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -44,7 +41,6 @@ class RepositoryListView: UIView {
             mainStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             mainStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
-        
     }
     
     func createScroll() {
@@ -67,7 +63,6 @@ class RepositoryListView: UIView {
     func fillRepositories(with data: [RepositoriesViewModel]) {
         self.cleanMainStak()
         //   setupStack()
-        
         for item in data.enumerated() {
             //            if item.offset <= 10 {
             let cell = RepositoryViewDetail(with: item.element)
@@ -79,11 +74,12 @@ class RepositoryListView: UIView {
     }
     
     func loadingView() {
-       // self.cleanMainStak()
-        setupStack()
-        let loadView = LoadView()
-        loadView.translatesAutoresizingMaskIntoConstraints = false
-        loadView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        mainStack.addArrangedSubview(loadView)
+        self.cleanMainStak()
+        for _ in 1...3{
+            let loadView = LoadView()
+            loadView.translatesAutoresizingMaskIntoConstraints = false
+            loadView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            mainStack.addArrangedSubview(loadView)
+        }
     }
 }

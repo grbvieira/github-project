@@ -2,7 +2,7 @@
 //  NibView+UIView.swift
 //  github-challenge
 //
-//  Created by Gerson Vieira on 17/02/20.
+//  Created by Gerson Vieira on 27/02/20.
 //  Copyright © 2020 Gerson Vieira. All rights reserved.
 //
 
@@ -49,3 +49,4 @@ extension UIView {
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
 }
+

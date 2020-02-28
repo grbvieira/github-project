@@ -11,12 +11,11 @@ import Kingfisher
 import Cosmos
 
 class RepositoryViewDetail: UIView {
-    
     var stackDetail = UIStackView()
     var stackImage  = UIStackView()
     var stackInfo   = UIStackView()
     
-    //MARK: - Cria Items para exibição
+    // MARK: - Cria Items para exibição
     private lazy var photo: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         return image
@@ -47,14 +46,13 @@ class RepositoryViewDetail: UIView {
         return CosmosView()
     }()
     
-    //MARK: - ViewCircleLife
-    
+    // MARK: - ViewCircleLife
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     required init(with data: RepositoriesViewModel) {
-        super.init(frame: CGRect(x: 0, y: 0, width:10, height: 10))
+        super.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         self.setupStack()
         self.autorName.text = "Author: " + data.nameAuthor
         self.repoName.text = data.nameRepositories
@@ -98,19 +96,18 @@ class RepositoryViewDetail: UIView {
         stackInfo.alignment = .top
         stackInfo.distribution = .fill
         stackInfo.spacing = 2.0
-        
         stackInfo.addArrangedSubview(repoName)
         stackInfo.addArrangedSubview(autorName)
         stackInfo.addArrangedSubview(starsCount)
-      /*  let stackStars = UIStackView()
-        stackStars.axis = .horizontal
-        stackStars.alignment = .top
-        stackStars.distribution = .fill
-        
-        stars.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-        stackStars.addArrangedSubview(stars)
-        stackStars.addArrangedSubview(starsCount)
-        
-        stackInfo.addArrangedSubview(stackStars)*/
+        /*  let stackStars = UIStackView()
+         stackStars.axis = .horizontal
+         stackStars.alignment = .top
+         stackStars.distribution = .fill
+         
+         stars.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+         stackStars.addArrangedSubview(stars)
+         stackStars.addArrangedSubview(starsCount)
+         
+         stackInfo.addArrangedSubview(stackStars)*/
     }
 }

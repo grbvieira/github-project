@@ -9,6 +9,7 @@ def defaultPods
   pod 'Moya/RxSwift'
   pod 'Kingfisher'
   pod 'Cosmos'
+  #pod 'SwiftLint'
 end
 
 def testPods

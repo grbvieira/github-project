@@ -12,6 +12,7 @@ class RepositoriesListCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigation: UINavigationController
     let controller: UIViewController
+    
     init(with navigation: UINavigationController) {
         self.navigation = navigation
         self.controller = RepositoriesListViewController()
@@ -30,6 +31,4 @@ class RepositoriesListCoordinator: Coordinator {
         self.start(presentation: presentation)
         return self.controller
     }
-    
 }
-

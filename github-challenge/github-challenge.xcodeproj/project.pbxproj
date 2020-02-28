@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		757000862405F06B003353A1 /* Shimmer+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000852405F06B003353A1 /* Shimmer+UIView.swift */; };
 		757000892405F0BC003353A1 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000882405F0BC003353A1 /* LoadView.swift */; };
+		757876D32408AE05003EF6C8 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D22408AE05003EF6C8 /* UIColor+extension.swift */; };
+		757876D52408AF10003EF6C8 /* LoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757876D42408AF10003EF6C8 /* LoadView.xib */; };
+		757876D72408AF27003EF6C8 /* NibView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D62408AF27003EF6C8 /* NibView+UIView.swift */; };
 		75D4E00F23FB683E00C82C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E00E23FB683E00C82C32 /* AppDelegate.swift */; };
 		75D4E01323FB683E00C82C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E01223FB683E00C82C32 /* ViewController.swift */; };
 		75D4E01623FB683E00C82C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D4E01423FB683E00C82C32 /* Main.storyboard */; };
@@ -21,13 +24,9 @@
 		75D4E03E23FB6DBF00C82C32 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E03D23FB6DBF00C82C32 /* Coordinator.swift */; };
 		75D4E04023FB6DEF00C82C32 /* RepositoryListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E03F23FB6DEF00C82C32 /* RepositoryListCoordinator.swift */; };
 		75D4E04323FB6E8500C82C32 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E04223FB6E8500C82C32 /* RepositoryListView.swift */; };
-		75D576D723FF5F8F0077B151 /* repoMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D576D623FF5F8E0077B151 /* repoMock.json */; };
 		75EC6E4423FB854B00179A3B /* RespositoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC6E4323FB854B00179A3B /* RespositoriesProvider.swift */; };
-		75EC6E4723FCB78400179A3B /* RepositoriesBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC6E4623FCB78400179A3B /* RepositoriesBusiness.swift */; };
-		75EC6E4A23FCBAC600179A3B /* RepositoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC6E4923FCBAC600179A3B /* RepositoriesManager.swift */; };
 		75EC6E4E23FCBC5200179A3B /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC6E4D23FCBC5200179A3B /* RepositoriesViewModel.swift */; };
 		75FEE0A523FB734200009D6D /* RepositoryViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FEE0A423FB734200009D6D /* RepositoryViewDetail.swift */; };
-		75FEE0A823FB735E00009D6D /* NibView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FEE0A723FB735E00009D6D /* NibView+UIView.swift */; };
 		75FEE0AB23FB7ADA00009D6D /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FEE0AA23FB7ADA00009D6D /* TargetType.swift */; };
 		75FEE0AD23FB7B2A00009D6D /* ApiTarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FEE0AC23FB7B2A00009D6D /* ApiTarge.swift */; };
 		75FEE0B023FB7D2A00009D6D /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FEE0AF23FB7D2A00009D6D /* RepositoriesModel.swift */; };
@@ -48,6 +47,9 @@
 /* Begin PBXFileReference section */
 		757000852405F06B003353A1 /* Shimmer+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shimmer+UIView.swift"; sourceTree = "<group>"; };
 		757000882405F0BC003353A1 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
+		757876D22408AE05003EF6C8 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		757876D42408AF10003EF6C8 /* LoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadView.xib; sourceTree = "<group>"; };
+		757876D62408AF27003EF6C8 /* NibView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NibView+UIView.swift"; sourceTree = "<group>"; };
 		75D4E00B23FB683E00C82C32 /* github-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D4E00E23FB683E00C82C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D4E01223FB683E00C82C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,13 +66,9 @@
 		75D4E03D23FB6DBF00C82C32 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		75D4E03F23FB6DEF00C82C32 /* RepositoryListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListCoordinator.swift; sourceTree = "<group>"; };
 		75D4E04223FB6E8500C82C32 /* RepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
-		75D576D623FF5F8E0077B151 /* repoMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repoMock.json; sourceTree = "<group>"; };
 		75EC6E4323FB854B00179A3B /* RespositoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespositoriesProvider.swift; sourceTree = "<group>"; };
-		75EC6E4623FCB78400179A3B /* RepositoriesBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesBusiness.swift; sourceTree = "<group>"; };
-		75EC6E4923FCBAC600179A3B /* RepositoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesManager.swift; sourceTree = "<group>"; };
 		75EC6E4D23FCBC5200179A3B /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		75FEE0A423FB734200009D6D /* RepositoryViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewDetail.swift; sourceTree = "<group>"; };
-		75FEE0A723FB735E00009D6D /* NibView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NibView+UIView.swift"; sourceTree = "<group>"; };
 		75FEE0AA23FB7ADA00009D6D /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		75FEE0AC23FB7B2A00009D6D /* ApiTarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTarge.swift; sourceTree = "<group>"; };
 		75FEE0AF23FB7D2A00009D6D /* RepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
@@ -115,15 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				757000882405F0BC003353A1 /* LoadView.swift */,
+				757876D42408AF10003EF6C8 /* LoadView.xib */,
 			);
 			path = Load;
-			sourceTree = "<group>";
-		};
-		757B540123FF5CEE002240F1 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mock;
 			sourceTree = "<group>";
 		};
 		75D4E00223FB683E00C82C32 = {
@@ -150,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				75D4E03A23FB6D4F00C82C32 /* Infrastructure */,
-				75EC6E4523FCB75E00179A3B /* Business */,
-				75EC6E4823FCBA9D00179A3B /* Manager */,
 				75FEE0AE23FB7D0800009D6D /* Model */,
 				75D4E03523FB6CB800C82C32 /* View */,
 				75EC6E4B23FCBC1E00179A3B /* ViewModel */,
@@ -209,7 +199,6 @@
 		75D4E03A23FB6D4F00C82C32 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				757B540123FF5CEE002240F1 /* Mock */,
 				75EC6E4223FB852B00179A3B /* Provider */,
 				75FEE0A923FB7AA900009D6D /* Network */,
 				75FEE0A623FB734D00009D6D /* Extension */,
@@ -248,23 +237,6 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
-		75EC6E4523FCB75E00179A3B /* Business */ = {
-			isa = PBXGroup;
-			children = (
-				75EC6E4623FCB78400179A3B /* RepositoriesBusiness.swift */,
-			);
-			path = Business;
-			sourceTree = "<group>";
-		};
-		75EC6E4823FCBA9D00179A3B /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				75D576D623FF5F8E0077B151 /* repoMock.json */,
-				75EC6E4923FCBAC600179A3B /* RepositoriesManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		75EC6E4B23FCBC1E00179A3B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,8 +264,9 @@
 		75FEE0A623FB734D00009D6D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				75FEE0A723FB735E00009D6D /* NibView+UIView.swift */,
 				757000852405F06B003353A1 /* Shimmer+UIView.swift */,
+				757876D22408AE05003EF6C8 /* UIColor+extension.swift */,
+				757876D62408AF27003EF6C8 /* NibView+UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -411,8 +384,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757876D52408AF10003EF6C8 /* LoadView.xib in Resources */,
 				75D4E01B23FB683F00C82C32 /* LaunchScreen.storyboard in Resources */,
-				75D576D723FF5F8F0077B151 /* repoMock.json in Resources */,
 				75D4E01823FB683F00C82C32 /* Assets.xcassets in Resources */,
 				75D4E01623FB683E00C82C32 /* Main.storyboard in Resources */,
 			);
@@ -513,15 +486,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EC6E4723FCB78400179A3B /* RepositoriesBusiness.swift in Sources */,
 				75D4E03C23FB6DA000C82C32 /* AppCoordinator.swift in Sources */,
-				75FEE0A823FB735E00009D6D /* NibView+UIView.swift in Sources */,
 				75FEE0A523FB734200009D6D /* RepositoryViewDetail.swift in Sources */,
 				75EC6E4E23FCBC5200179A3B /* RepositoriesViewModel.swift in Sources */,
 				75D4E01323FB683E00C82C32 /* ViewController.swift in Sources */,
 				75D4E04023FB6DEF00C82C32 /* RepositoryListCoordinator.swift in Sources */,
+				757876D72408AF27003EF6C8 /* NibView+UIView.swift in Sources */,
 				75D4E03223FB6BF300C82C32 /* BaseViewController.swift in Sources */,
-				75EC6E4A23FCBAC600179A3B /* RepositoriesManager.swift in Sources */,
+				757876D32408AE05003EF6C8 /* UIColor+extension.swift in Sources */,
 				75D4E00F23FB683E00C82C32 /* AppDelegate.swift in Sources */,
 				75D4E04323FB6E8500C82C32 /* RepositoryListView.swift in Sources */,
 				75EC6E4423FB854B00179A3B /* RespositoriesProvider.swift in Sources */,

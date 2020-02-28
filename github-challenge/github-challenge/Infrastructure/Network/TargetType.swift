@@ -8,10 +8,6 @@
 
 import Moya
 
-
-//https://api.github.com/search/repositories
-//language:swift
-//sort=stars
 enum Paths: String {
     case repositories = "/search/repositories"
 }
@@ -40,14 +36,3 @@ extension TargetType {
         return ["":""]
     }
 }
-/*
-    var headers: [String : String]? {
-        switch self {
-        case .getData:
-            return ["content-type": "application/json"]
-        }
-    }
-    
-}
-
-*/
