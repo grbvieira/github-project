@@ -78,7 +78,7 @@ class RepositoryListView: UIView {
         for _ in 1...3{
             let loadView = LoadView()
             loadView.translatesAutoresizingMaskIntoConstraints = false
-            loadView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            loadView.heightAnchor.constraint(equalToConstant: 145).isActive = true
             mainStack.addArrangedSubview(loadView)
         }
     }

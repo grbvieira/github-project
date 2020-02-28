@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		757000862405F06B003353A1 /* Shimmer+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000852405F06B003353A1 /* Shimmer+UIView.swift */; };
 		757000892405F0BC003353A1 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000882405F0BC003353A1 /* LoadView.swift */; };
-		757876D32408AE05003EF6C8 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D22408AE05003EF6C8 /* UIColor+extension.swift */; };
 		757876D52408AF10003EF6C8 /* LoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757876D42408AF10003EF6C8 /* LoadView.xib */; };
 		757876D72408AF27003EF6C8 /* NibView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D62408AF27003EF6C8 /* NibView+UIView.swift */; };
 		75D4E00F23FB683E00C82C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E00E23FB683E00C82C32 /* AppDelegate.swift */; };
@@ -47,7 +46,6 @@
 /* Begin PBXFileReference section */
 		757000852405F06B003353A1 /* Shimmer+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shimmer+UIView.swift"; sourceTree = "<group>"; };
 		757000882405F0BC003353A1 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
-		757876D22408AE05003EF6C8 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		757876D42408AF10003EF6C8 /* LoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadView.xib; sourceTree = "<group>"; };
 		757876D62408AF27003EF6C8 /* NibView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NibView+UIView.swift"; sourceTree = "<group>"; };
 		75D4E00B23FB683E00C82C32 /* github-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				757000852405F06B003353A1 /* Shimmer+UIView.swift */,
-				757876D22408AE05003EF6C8 /* UIColor+extension.swift */,
 				757876D62408AF27003EF6C8 /* NibView+UIView.swift */,
 			);
 			path = Extension;
@@ -493,7 +490,6 @@
 				75D4E04023FB6DEF00C82C32 /* RepositoryListCoordinator.swift in Sources */,
 				757876D72408AF27003EF6C8 /* NibView+UIView.swift in Sources */,
 				75D4E03223FB6BF300C82C32 /* BaseViewController.swift in Sources */,
-				757876D32408AE05003EF6C8 /* UIColor+extension.swift in Sources */,
 				75D4E00F23FB683E00C82C32 /* AppDelegate.swift in Sources */,
 				75D4E04323FB6E8500C82C32 /* RepositoryListView.swift in Sources */,
 				75EC6E4423FB854B00179A3B /* RespositoriesProvider.swift in Sources */,

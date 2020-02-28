@@ -20,50 +20,56 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OM9-JA-JNc">
-                    <rect key="frame" x="166" y="58" width="240" height="34"/>
-                    <color key="backgroundColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="34" id="faz-iK-wZk"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-sg-860">
-                    <rect key="frame" x="166" y="100" width="240" height="34"/>
-                    <color key="backgroundColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="34" id="vDz-7J-fyX"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyq-JV-62D">
-                    <rect key="frame" x="166" y="16" width="240" height="34"/>
-                    <color key="backgroundColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="34" id="cvk-oJ-smn"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cD-wx-uWu">
-                    <rect key="frame" x="8" y="16" width="140" height="90"/>
-                    <color key="backgroundColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="140" id="34s-95-sju"/>
-                        <constraint firstAttribute="height" constant="90" id="lPF-N5-SDR"/>
-                    </constraints>
-                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="XKf-S3-8Tb">
+                    <rect key="frame" x="8" y="16" width="398" height="118"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Z3-zf-ZTe">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="90"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cD-wx-uWu">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="90"/>
+                                    <color key="backgroundColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="140" id="34s-95-sju"/>
+                                        <constraint firstAttribute="height" constant="90" id="lPF-N5-SDR"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sbn-Hh-dbk">
+                            <rect key="frame" x="158" y="0.0" width="240" height="118"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyq-JV-62D">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                    <color key="backgroundColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="cvk-oJ-smn"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OM9-JA-JNc">
+                                    <rect key="frame" x="0.0" y="42" width="240" height="34"/>
+                                    <color key="backgroundColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="faz-iK-wZk"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-sg-860">
+                                    <rect key="frame" x="0.0" y="84" width="240" height="34"/>
+                                    <color key="backgroundColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="vDz-7J-fyX"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="dyq-JV-62D" firstAttribute="leading" secondItem="8cD-wx-uWu" secondAttribute="trailing" constant="18" id="1o7-mX-8Nm"/>
-                <constraint firstItem="OM9-JA-JNc" firstAttribute="top" secondItem="dyq-JV-62D" secondAttribute="bottom" constant="8" id="2NN-yd-wGW"/>
-                <constraint firstItem="OM9-JA-JNc" firstAttribute="leading" secondItem="8cD-wx-uWu" secondAttribute="trailing" constant="18" id="G2G-CB-Gtu"/>
-                <constraint firstItem="5ge-sg-860" firstAttribute="leading" secondItem="8cD-wx-uWu" secondAttribute="trailing" constant="18" id="JGq-a8-h1Y"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dyq-JV-62D" secondAttribute="trailing" constant="8" id="OEG-1b-tH1"/>
-                <constraint firstItem="8cD-wx-uWu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Pm8-bx-dx8"/>
-                <constraint firstItem="5ge-sg-860" firstAttribute="top" secondItem="OM9-JA-JNc" secondAttribute="bottom" constant="8" id="Usu-Pz-cAy"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5ge-sg-860" secondAttribute="trailing" constant="8" id="fgf-SX-gGB"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OM9-JA-JNc" secondAttribute="trailing" constant="8" id="i19-Fb-5uM"/>
-                <constraint firstItem="8cD-wx-uWu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="sye-ee-SQz"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5ge-sg-860" secondAttribute="bottom" constant="16" id="u9m-nX-gU8"/>
-                <constraint firstItem="dyq-JV-62D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="ylM-j5-S9E"/>
+                <constraint firstItem="XKf-S3-8Tb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="T3j-No-y8X"/>
+                <constraint firstItem="XKf-S3-8Tb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="dSW-cq-kpT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XKf-S3-8Tb" secondAttribute="trailing" constant="8" id="kwz-44-faA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
