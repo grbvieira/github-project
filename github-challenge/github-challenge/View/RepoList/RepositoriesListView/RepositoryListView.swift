@@ -31,7 +31,7 @@ class RepositoryListView: UIView {
         mainStack.alignment = .fill
         mainStack.axis = .vertical
         mainStack.distribution = .fillEqually
-        mainStack.spacing = 2.0
+        mainStack.spacing = 8
         self.scrollView.addSubview(mainStack)
         mainStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -62,14 +62,11 @@ class RepositoryListView: UIView {
     
     func fillRepositories(with data: [RepositoriesViewModel]) {
         self.cleanMainStak()
-        //   setupStack()
         for item in data.enumerated() {
-            //            if item.offset <= 10 {
             let cell = RepositoryViewDetail(with: item.element)
             cell.translatesAutoresizingMaskIntoConstraints = false
-            cell.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            cell.heightAnchor.constraint(equalToConstant: 110).isActive = true
             mainStack.addArrangedSubview(cell)
-            //   }
         }
     }
     

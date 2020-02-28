@@ -30,6 +30,7 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Repositories"
         self.fetchRepositories()
     }
     

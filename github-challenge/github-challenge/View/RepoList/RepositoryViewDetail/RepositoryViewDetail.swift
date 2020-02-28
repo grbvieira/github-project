@@ -73,13 +73,19 @@ class RepositoryViewDetail: UIView {
     
     func setupStackDetail() {
         stackDetail.axis = .horizontal
-        stackDetail.alignment = .firstBaseline
+        stackDetail.alignment = .fill
         stackDetail.distribution = .fillEqually
-        stackDetail.spacing = 0
+        stackDetail.spacing = 16
         stackDetail.addArrangedSubview(stackImage)
         stackDetail.addArrangedSubview(stackInfo)
-        stackDetail.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100)
         self.addSubview(stackDetail)
+        stackDetail.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackDetail.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackDetail.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stackDetail.topAnchor.constraint(equalTo: self.topAnchor),
+            stackDetail.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        ])
     }
     
     func setupSackImage() {
@@ -99,15 +105,5 @@ class RepositoryViewDetail: UIView {
         stackInfo.addArrangedSubview(repoName)
         stackInfo.addArrangedSubview(autorName)
         stackInfo.addArrangedSubview(starsCount)
-        /*  let stackStars = UIStackView()
-         stackStars.axis = .horizontal
-         stackStars.alignment = .top
-         stackStars.distribution = .fill
-         
-         stars.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-         stackStars.addArrangedSubview(stars)
-         stackStars.addArrangedSubview(starsCount)
-         
-         stackInfo.addArrangedSubview(stackStars)*/
     }
 }
