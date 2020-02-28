@@ -57,7 +57,7 @@ class RepositoryViewDetail: UIView {
         self.autorName.text = "Author: " + data.nameAuthor
         self.repoName.text = data.nameRepositories
         self.stars.rating = Double(data.starsCount)/2
-        self.starsCount.text = "Stars: " + data.starsCountToString
+        self.starsCount.text = "Stars: " + formatPoints(from: data.starsCount)
         self.photo.kf.setImage(with: data.photoURL)
     }
     
@@ -79,13 +79,7 @@ class RepositoryViewDetail: UIView {
         stackDetail.addArrangedSubview(stackImage)
         stackDetail.addArrangedSubview(stackInfo)
         self.addSubview(stackDetail)
-        stackDetail.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            stackDetail.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            stackDetail.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            stackDetail.topAnchor.constraint(equalTo: self.topAnchor),
-            stackDetail.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-        ])
+        stackDetail.frame = CGRect(x: 0, y: 16, width: UIScreen.main.bounds.width, height: 100)
     }
     
     func setupSackImage() {
@@ -105,5 +99,23 @@ class RepositoryViewDetail: UIView {
         stackInfo.addArrangedSubview(repoName)
         stackInfo.addArrangedSubview(autorName)
         stackInfo.addArrangedSubview(starsCount)
+    }
+    
+    func formatPoints(from: Int) -> String {
+
+        let number = Double(from)
+        let thousand = number / 1000
+        let million = number / 1000000
+        let billion = number / 1000000000
+
+        if billion >= 1.0 {
+            return "\(round(billion*10)/10)B"
+        } else if million >= 1.0 {
+            return "\(round(million*10)/10)M"
+        } else if thousand >= 1.0 {
+            return ("\(round(thousand*10/10))K")
+        } else {
+            return "\(Int(number))"
+        }
     }
 }
