@@ -57,7 +57,7 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
         case .success(let response):
             let viewModel = FillViewModel().wrapToViewModel(model: response[0])
              self.customView.loadingView()
-           // customView.fillRepositories(with: viewModel)
+            customView.fillRepositories(with: viewModel)
         case .failure(let error):
             self.alert(message: error)
         case .none:
