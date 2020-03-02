@@ -36,7 +36,7 @@ class RepositoryViewDetail: UIView {
         return label
     }()
     
-    private lazy var starImage: UIImageView = {
+    private lazy var starsImage: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
         image.image = UIImage(named: "star")
         image.contentMode = .scaleAspectFit
@@ -44,6 +44,20 @@ class RepositoryViewDetail: UIView {
     }()
     
     private lazy var starsCount: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var forksImage: UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
+        image.image = UIImage(named: "forks")
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    
+    private lazy var forksCount: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
@@ -61,6 +75,7 @@ class RepositoryViewDetail: UIView {
         self.autorName.text = "Author: " + data.nameAuthor
         self.repoName.text = data.nameRepositories
         self.starsCount.text = formatPoints(from: data.starsCount)
+        self.forksCount.text = formatPoints(from: data.forksCount)
         self.photo.kf.setImage(with: data.photoURL)
     }
     
@@ -108,10 +123,12 @@ class RepositoryViewDetail: UIView {
     func setupStackStar() {
         stackStar.axis = .horizontal
         stackStar.alignment = .fill
-        stackStar.distribution = .fill
-        stackStar.spacing = 2.0
-        stackStar.addArrangedSubview(starImage)
+        stackStar.distribution = .fillEqually
+        stackStar.spacing = 0
+        stackStar.addArrangedSubview(starsImage)
         stackStar.addArrangedSubview(starsCount)
+        stackStar.addArrangedSubview(forksImage)
+        stackStar.addArrangedSubview(forksCount)
     }
     
     func formatPoints(from: Int) -> String {

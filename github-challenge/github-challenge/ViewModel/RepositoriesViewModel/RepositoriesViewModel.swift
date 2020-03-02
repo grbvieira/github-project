@@ -36,23 +36,22 @@ class RepositoriesViewModel {
         return count
     }
     
-    var starsCountToString: String {
-        let count = entry?.stargazersCount ?? 0
-        let str = String(count)
-        return str
+    var forksCount: Int {
+        let count = entry?.forksCount ?? 0
+        return count
     }
 }
 
 class FillViewModel {
-     func wrapToViewModel(model: RepositoriesModel) -> [RepositoriesViewModel] {
-           var repositories = [RepositoriesViewModel]()
-           guard let items = model.items else {
-               return repositories
-           }
-           for item in items {
-               let viewModel = RepositoriesViewModel(entry: item)
-               repositories.append(viewModel)
-           }
-           return repositories
-       }
+    func wrapToViewModel(model: RepositoriesModel) -> [RepositoriesViewModel] {
+        var repositories = [RepositoriesViewModel]()
+        guard let items = model.items else {
+            return repositories
+        }
+        for item in items {
+            let viewModel = RepositoriesViewModel(entry: item)
+            repositories.append(viewModel)
+        }
+        return repositories
+    }
 }
