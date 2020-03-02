@@ -60,7 +60,7 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     func reloadStack() {
         switch  repositoriesResponse {
         case .loading :
-            self.customView.loadingView()
+            self.customView.activityIndicator()
         case .success(let response):
             let viewModel = FillViewModel().wrapToViewModel(model: response[0])
             self.viewModel = viewModel

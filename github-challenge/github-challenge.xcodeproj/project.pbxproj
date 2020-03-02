@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		757000862405F06B003353A1 /* Shimmer+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000852405F06B003353A1 /* Shimmer+UIView.swift */; };
-		757000892405F0BC003353A1 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000882405F0BC003353A1 /* LoadView.swift */; };
-		757876D52408AF10003EF6C8 /* LoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757876D42408AF10003EF6C8 /* LoadView.xib */; };
 		757876D72408AF27003EF6C8 /* NibView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D62408AF27003EF6C8 /* NibView+UIView.swift */; };
 		757876DA2408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D92408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift */; };
 		757876DD2408C163003EF6C8 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876DC2408C163003EF6C8 /* Mock.swift */; };
@@ -49,8 +47,6 @@
 
 /* Begin PBXFileReference section */
 		757000852405F06B003353A1 /* Shimmer+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shimmer+UIView.swift"; sourceTree = "<group>"; };
-		757000882405F0BC003353A1 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
-		757876D42408AF10003EF6C8 /* LoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadView.xib; sourceTree = "<group>"; };
 		757876D62408AF27003EF6C8 /* NibView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NibView+UIView.swift"; sourceTree = "<group>"; };
 		757876D92408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelSpec.swift; sourceTree = "<group>"; };
 		757876DC2408C163003EF6C8 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
@@ -112,15 +108,6 @@
 				B3371DC195B526FBE2606573 /* Pods_github_challengeTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		757000872405F0A4003353A1 /* Load */ = {
-			isa = PBXGroup;
-			children = (
-				757000882405F0BC003353A1 /* LoadView.swift */,
-				757876D42408AF10003EF6C8 /* LoadView.xib */,
-			);
-			path = Load;
 			sourceTree = "<group>";
 		};
 		757876D82408BFA7003EF6C8 /* RepositoriesViewModel */ = {
@@ -194,7 +181,6 @@
 		75D4E03523FB6CB800C82C32 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				757000872405F0A4003353A1 /* Load */,
 				75D4E03623FB6CBF00C82C32 /* RepoList */,
 			);
 			path = View;
@@ -408,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				757876E02408C620003EF6C8 /* repoMock.json in Resources */,
-				757876D52408AF10003EF6C8 /* LoadView.xib in Resources */,
 				75D4E01B23FB683F00C82C32 /* LaunchScreen.storyboard in Resources */,
 				75D4E01823FB683F00C82C32 /* Assets.xcassets in Resources */,
 				75D4E01623FB683E00C82C32 /* Main.storyboard in Resources */,
@@ -523,7 +508,6 @@
 				75EC6E4423FB854B00179A3B /* RespositoriesProvider.swift in Sources */,
 				75D4E03823FB6CFA00C82C32 /* RepositoryListViewController.swift in Sources */,
 				75FEE0AB23FB7ADA00009D6D /* TargetType.swift in Sources */,
-				757000892405F0BC003353A1 /* LoadView.swift in Sources */,
 				75FEE0B023FB7D2A00009D6D /* RepositoriesModel.swift in Sources */,
 				75FEE0AD23FB7B2A00009D6D /* ApiTarge.swift in Sources */,
 				757000862405F06B003353A1 /* Shimmer+UIView.swift in Sources */,

@@ -62,7 +62,7 @@ class RepositoryListView: UIView {
     
     func removeLoadView() {
         self.mainStack.subviews.forEach({
-            if $0 is LoadView {
+            if $0 is UIActivityIndicatorView {
                 $0.removeFromSuperview()
             }
         })
@@ -78,11 +78,10 @@ class RepositoryListView: UIView {
         }
     }
     
-    func loadingView() {
-        removeLoadView()
-        let loadView = LoadView()
-        loadView.translatesAutoresizingMaskIntoConstraints = false
-        loadView.heightAnchor.constraint(equalToConstant: 145).isActive = true
-        mainStack.addArrangedSubview(loadView)
+    func activityIndicator() {
+        let loadingView = UIActivityIndicatorView()
+        loadingView.color = .black
+        loadingView.startAnimating()
+        mainStack.addArrangedSubview(loadingView)
     }
 }
