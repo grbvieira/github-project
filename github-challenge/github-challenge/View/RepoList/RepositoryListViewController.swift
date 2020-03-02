@@ -22,7 +22,7 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     private let fetch = RepositoriesProvider()
     private var fetching = false
     private var viewModel = [RepositoriesViewModel]()
-    private var repositoriesResponse: Request<[RepositoriesModel]> = .none {
+    var repositoriesResponse: Request<[RepositoriesModel]> = .none {
         didSet { reloadStack() }
     }
     

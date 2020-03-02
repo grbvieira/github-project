@@ -20,7 +20,7 @@ class RepositoriesViewModelSpec: QuickSpec {
             repoArray = FillViewModel().wrapToViewModel(model: response!)
         }
         
-        describe("Fill ViewModel") {
+        describe("RepositoriesViewModelSpec") {
             
             context("fills array with wrapToViewModel function"){
                 it("repoArray should be greater than zero") {
@@ -47,8 +47,8 @@ class RepositoriesViewModelSpec: QuickSpec {
                     expect(repoArray[0].starsCount is Int).to(beTrue())
                 }
                 
-                it("starsCountToString should be String") {
-                    expect(repoArray[0].starsCountToString is String).to(beTrue())
+                it("starsCountToString should be Int") {
+                    expect(repoArray[0].forksCount is Int).to(beTrue())
                 }
             }
         }
