@@ -85,7 +85,6 @@ extension RepositoriesListViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) {
             if !fetching {
-                print("CHEGOU AO FIM O SCROLL")
                 page = page + 1
                 fetchRepositories()
             }

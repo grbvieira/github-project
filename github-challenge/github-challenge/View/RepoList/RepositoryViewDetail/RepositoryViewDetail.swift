@@ -14,6 +14,7 @@ class RepositoryViewDetail: UIView {
     var stackDetail = UIStackView()
     var stackImage  = UIStackView()
     var stackInfo   = UIStackView()
+    var stackStar = UIStackView()
     
     // MARK: - Cria Items para exibição
     private lazy var photo: UIImageView = {
@@ -35,15 +36,18 @@ class RepositoryViewDetail: UIView {
         return label
     }()
     
+    private lazy var starImage: UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
+        image.image = UIImage(named: "star")
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    
     private lazy var starsCount: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         return label
-    }()
-    
-    private lazy var stars: CosmosView = {
-        return CosmosView()
     }()
     
     // MARK: - ViewCircleLife
@@ -56,8 +60,7 @@ class RepositoryViewDetail: UIView {
         self.setupStack()
         self.autorName.text = "Author: " + data.nameAuthor
         self.repoName.text = data.nameRepositories
-        self.stars.rating = Double(data.starsCount)/2
-        self.starsCount.text = "Stars: " + formatPoints(from: data.starsCount)
+        self.starsCount.text = formatPoints(from: data.starsCount)
         self.photo.kf.setImage(with: data.photoURL)
     }
     
@@ -92,22 +95,32 @@ class RepositoryViewDetail: UIView {
     }
     
     func setupStackInfo() {
+        setupStackStar()
         stackInfo.axis = .vertical
         stackInfo.alignment = .top
         stackInfo.distribution = .fill
         stackInfo.spacing = 2.0
         stackInfo.addArrangedSubview(repoName)
         stackInfo.addArrangedSubview(autorName)
-        stackInfo.addArrangedSubview(starsCount)
+        stackInfo.addArrangedSubview(stackStar)
+    }
+    
+    func setupStackStar() {
+        stackStar.axis = .horizontal
+        stackStar.alignment = .fill
+        stackStar.distribution = .fill
+        stackStar.spacing = 2.0
+        stackStar.addArrangedSubview(starImage)
+        stackStar.addArrangedSubview(starsCount)
     }
     
     func formatPoints(from: Int) -> String {
-
+        
         let number = Double(from)
         let thousand = number / 1000
         let million = number / 1000000
         let billion = number / 1000000000
-
+        
         if billion >= 1.0 {
             return "\(round(billion*10)/10)B"
         } else if million >= 1.0 {
