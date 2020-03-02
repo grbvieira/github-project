@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import Cosmos
 
 class RepositoryViewDetail: UIView {
     var stackDetail = UIStackView()
@@ -24,6 +23,7 @@ class RepositoryViewDetail: UIView {
     
     private lazy var repoName: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
         return label
@@ -31,6 +31,7 @@ class RepositoryViewDetail: UIView {
     
     private lazy var autorName: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         return label
@@ -45,6 +46,7 @@ class RepositoryViewDetail: UIView {
     
     private lazy var starsCount: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         return label
@@ -59,6 +61,7 @@ class RepositoryViewDetail: UIView {
     
     private lazy var forksCount: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 0
         return label

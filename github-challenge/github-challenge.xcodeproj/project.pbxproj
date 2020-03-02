@@ -32,7 +32,7 @@
 		75FEE0AD23FB7B2A00009D6D /* ApiTarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FEE0AC23FB7B2A00009D6D /* ApiTarge.swift */; };
 		75FEE0B023FB7D2A00009D6D /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FEE0AF23FB7D2A00009D6D /* RepositoriesModel.swift */; };
 		9DAADAE3EC9433B48D1DAB37 /* Pods_github_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3371DC195B526FBE2606573 /* Pods_github_challengeTests.framework */; };
-		BDA1F6F1D8C73E6F252240CA /* Pods_github_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF395409DBEEEFA49B9C9FF5 /* Pods_github_challenge.framework */; };
+		D461217E1782B08474E96481 /* libPods-github-challenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6F9F0D2308BA8BA6B51F1B /* libPods-github-challenge.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,7 @@
 		D0C2D255C0FE02AB99C283BF /* Pods-github-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-challenge.debug.xcconfig"; path = "Target Support Files/Pods-github-challenge/Pods-github-challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		E9A949D48630D9B2B951F8B7 /* Pods-github-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-challenge.release.xcconfig"; path = "Target Support Files/Pods-github-challenge/Pods-github-challenge.release.xcconfig"; sourceTree = "<group>"; };
 		EB30630A71313981100950D9 /* Pods-github-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-github-challengeTests/Pods-github-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FF395409DBEEEFA49B9C9FF5 /* Pods_github_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6F9F0D2308BA8BA6B51F1B /* libPods-github-challenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-github-challenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA1F6F1D8C73E6F252240CA /* Pods_github_challenge.framework in Frameworks */,
+				D461217E1782B08474E96481 /* libPods-github-challenge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +104,8 @@
 		21DA9938300788D06B792ED9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FF395409DBEEEFA49B9C9FF5 /* Pods_github_challenge.framework */,
 				B3371DC195B526FBE2606573 /* Pods_github_challengeTests.framework */,
+				FA6F9F0D2308BA8BA6B51F1B /* libPods-github-challenge.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -319,7 +319,6 @@
 				75D4E00723FB683E00C82C32 /* Sources */,
 				75D4E00823FB683E00C82C32 /* Frameworks */,
 				75D4E00923FB683E00C82C32 /* Resources */,
-				9F346555307135B6B2095CE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,23 +447,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F346555307135B6B2095CE1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-github-challenge/Pods-github-challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-github-challenge/Pods-github-challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-github-challenge/Pods-github-challenge-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF0298A04867EA6FEDBF8C6A /* [CP] Check Pods Manifest.lock */ = {

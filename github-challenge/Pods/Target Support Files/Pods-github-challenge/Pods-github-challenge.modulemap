@@ -1,4 +1,4 @@
-framework module Pods_github_challenge {
+module Pods_github_challenge {
   umbrella header "Pods-github-challenge-umbrella.h"
 
   export *
