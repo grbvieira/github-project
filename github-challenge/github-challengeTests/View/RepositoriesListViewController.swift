@@ -25,18 +25,16 @@ class RepositoriesListViewControllerSpec: QuickSpec {
             context("Request sucess") {
                 it("show repositories") {
                     controller?.repositoriesResponse = .success([response!])
-                    controller?.reloadStack()
-                    expect(controller?.customView.mainStack.subviews.count).to(be(31))
+                    expect(controller?.customView.mainStack.subviews.count).to(be(30))
                 }
             }
             context("Request Faile") {
                 it("Remove loadingView"){
-                    var hasUIActivityIndicatorView = true
+                    var hasUIActivityIndicatorView = false
                     controller?.repositoriesResponse = .failure("Generic")
-                    controller?.reloadStack()
                     controller?.customView.mainStack.subviews.forEach({
                         if $0 is UIActivityIndicatorView {
-                            hasUIActivityIndicatorView = false
+                            hasUIActivityIndicatorView = true
                         }
                         
                     })
