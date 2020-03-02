@@ -19,7 +19,7 @@ let provider = MoyaProvider<APITarget>( endpointClosure: { (target) -> Endpoint 
 }, plugins: [NetworkLoggerPlugin(verbose: false)])
 
 enum APITarget{
-    case repositories
+    case repositories(page: Int)
 }
 
 extension APITarget: TargetType {
@@ -38,10 +38,11 @@ extension APITarget: TargetType {
     
     var task: Task {
         switch self {
-        case .repositories:
+        case .repositories(let page):
             var parameters: [String: Any] = [:]
             parameters[Keys.query.rawValue] = Values.language.rawValue
             parameters[Keys.sort.rawValue] =  Values.sort.hashValue
+            parameters[Keys.page.rawValue] = page
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }

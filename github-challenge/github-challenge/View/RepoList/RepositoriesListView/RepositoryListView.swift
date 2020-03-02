@@ -60,8 +60,16 @@ class RepositoryListView: UIView {
         })
     }
     
+    func removeLoadView() {
+        self.mainStack.subviews.forEach({
+            if $0 is LoadView {
+                $0.removeFromSuperview()
+            }
+        })
+    }
+    
     func fillRepositories(with data: [RepositoriesViewModel]) {
-        self.cleanMainStak()
+        removeLoadView()
         for item in data.enumerated() {
             let cell = RepositoryViewDetail(with: item.element)
             cell.translatesAutoresizingMaskIntoConstraints = false
@@ -71,12 +79,10 @@ class RepositoryListView: UIView {
     }
     
     func loadingView() {
-        self.cleanMainStak()
-        for _ in 1...3{
-            let loadView = LoadView()
-            loadView.translatesAutoresizingMaskIntoConstraints = false
-            loadView.heightAnchor.constraint(equalToConstant: 145).isActive = true
-            mainStack.addArrangedSubview(loadView)
-        }
+        removeLoadView()
+        let loadView = LoadView()
+        loadView.translatesAutoresizingMaskIntoConstraints = false
+        loadView.heightAnchor.constraint(equalToConstant: 145).isActive = true
+        mainStack.addArrangedSubview(loadView)
     }
 }

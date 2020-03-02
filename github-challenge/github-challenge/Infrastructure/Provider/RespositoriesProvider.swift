@@ -10,13 +10,13 @@ import Moya
 import RxSwift
 
 protocol APIProtocol {
-    func resquestRepositories() -> Single<RepositoriesModel>
+    func resquestRepositories(page: Int) -> Single<RepositoriesModel>
 }
 class RepositoriesProvider: APIProtocol {
     
-    func resquestRepositories() -> Single<RepositoriesModel> {
+    func resquestRepositories(page: Int) -> Single<RepositoriesModel> {
         return provider.rx
-            .request(.repositories)
+            .request(.repositories(page: page))
             .map {
                 let response = try JSONDecoder().decode(RepositoriesModel.self, from: $0.data)
                 return response

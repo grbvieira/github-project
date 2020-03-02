@@ -15,6 +15,7 @@ enum Paths: String {
 enum Keys: String {
     case query = "q"
     case sort
+    case page
 }
 
 enum Values: String {

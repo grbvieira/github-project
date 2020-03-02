@@ -11,6 +11,10 @@
 		757000892405F0BC003353A1 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757000882405F0BC003353A1 /* LoadView.swift */; };
 		757876D52408AF10003EF6C8 /* LoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757876D42408AF10003EF6C8 /* LoadView.xib */; };
 		757876D72408AF27003EF6C8 /* NibView+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D62408AF27003EF6C8 /* NibView+UIView.swift */; };
+		757876DA2408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876D92408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift */; };
+		757876DD2408C163003EF6C8 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757876DC2408C163003EF6C8 /* Mock.swift */; };
+		757876DF2408C170003EF6C8 /* repoMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 757876DE2408C170003EF6C8 /* repoMock.json */; };
+		757876E02408C620003EF6C8 /* repoMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 757876DE2408C170003EF6C8 /* repoMock.json */; };
 		75D4E00F23FB683E00C82C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E00E23FB683E00C82C32 /* AppDelegate.swift */; };
 		75D4E01323FB683E00C82C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4E01223FB683E00C82C32 /* ViewController.swift */; };
 		75D4E01623FB683E00C82C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D4E01423FB683E00C82C32 /* Main.storyboard */; };
@@ -48,6 +52,9 @@
 		757000882405F0BC003353A1 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
 		757876D42408AF10003EF6C8 /* LoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadView.xib; sourceTree = "<group>"; };
 		757876D62408AF27003EF6C8 /* NibView+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NibView+UIView.swift"; sourceTree = "<group>"; };
+		757876D92408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelSpec.swift; sourceTree = "<group>"; };
+		757876DC2408C163003EF6C8 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		757876DE2408C170003EF6C8 /* repoMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repoMock.json; sourceTree = "<group>"; };
 		75D4E00B23FB683E00C82C32 /* github-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D4E00E23FB683E00C82C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D4E01223FB683E00C82C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +123,23 @@
 			path = Load;
 			sourceTree = "<group>";
 		};
+		757876D82408BFA7003EF6C8 /* RepositoriesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				757876D92408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift */,
+			);
+			path = RepositoriesViewModel;
+			sourceTree = "<group>";
+		};
+		757876DB2408C157003EF6C8 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				757876DE2408C170003EF6C8 /* repoMock.json */,
+				757876DC2408C163003EF6C8 /* Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		75D4E00223FB683E00C82C32 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +174,8 @@
 		75D4E02423FB683F00C82C32 /* github-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				757876DB2408C157003EF6C8 /* Mock */,
+				757876D82408BFA7003EF6C8 /* RepositoriesViewModel */,
 				75D4E02523FB683F00C82C32 /* github_challengeTests.swift */,
 				75D4E02723FB683F00C82C32 /* Info.plist */,
 			);
@@ -381,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757876E02408C620003EF6C8 /* repoMock.json in Resources */,
 				757876D52408AF10003EF6C8 /* LoadView.xib in Resources */,
 				75D4E01B23FB683F00C82C32 /* LaunchScreen.storyboard in Resources */,
 				75D4E01823FB683F00C82C32 /* Assets.xcassets in Resources */,
@@ -392,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757876DF2408C170003EF6C8 /* repoMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +536,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D4E02623FB683F00C82C32 /* github_challengeTests.swift in Sources */,
+				757876DA2408BFDC003EF6C8 /* RepositoriesViewModelSpec.swift in Sources */,
+				757876DD2408C163003EF6C8 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

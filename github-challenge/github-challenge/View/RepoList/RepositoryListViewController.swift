@@ -20,9 +20,13 @@ enum Request<T> {
 class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     private var disposeBag: DisposeBag!
     private let fetch = RepositoriesProvider()
+    private var fetching = false
+    private var viewModel = [RepositoriesViewModel]()
     private var repositoriesResponse: Request<[RepositoriesModel]> = .none {
         didSet { reloadStack() }
     }
+    
+    var page = 1
     
     override func loadView() {
         super.loadView()
@@ -31,35 +35,38 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Repositories"
+        self.customView.scrollView.delegate = self
         self.fetchRepositories()
     }
     
     func fetchRepositories() {
         disposeBag = DisposeBag()
         repositoriesResponse = .loading
-        fetch.resquestRepositories()
+        fetching = true
+        fetch.resquestRepositories(page: page)
             .subscribe { [weak self] event in
-            guard let self = self else { return }
-            switch event {
-            case .success(let response):
-                self.repositoriesResponse = .success([response])
-            case .error(let error):
-                self.repositoriesResponse = .failure(error.localizedDescription)
-            }
+                guard let self = self else { return }
+                switch event {
+                case .success(let response):
+                    self.repositoriesResponse = .success([response])
+                    self.fetching = false
+                case .error(let error):
+                    self.repositoriesResponse = .failure(error.localizedDescription)
+                    self.fetching = false
+                }
         }.disposed(by: disposeBag)
     }
     
     func reloadStack() {
-        customView.cleanMainStak()
         switch  repositoriesResponse {
         case .loading :
             self.customView.loadingView()
-            return
         case .success(let response):
             let viewModel = FillViewModel().wrapToViewModel(model: response[0])
-             self.customView.loadingView()
-            customView.fillRepositories(with: viewModel)
+            self.viewModel = viewModel
+            customView.fillRepositories(with: self.viewModel)
         case .failure(let error):
+            self.customView.removeLoadView()
             self.alert(message: error)
         case .none:
             return
@@ -73,3 +80,16 @@ class RepositoriesListViewController: BaseViewController<RepositoryListView> {
         self.present(alert, animated: true, completion: nil)
     }
 }
+extension RepositoriesListViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) {
+            if !fetching {
+                print("CHEGOU AO FIM O SCROLL")
+                page = page + 1
+                fetchRepositories()
+            }
+        }
+    }
+}
+
